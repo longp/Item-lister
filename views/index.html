@@ -2,25 +2,42 @@
 <html ng-app="item_lister">
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/item.css" media="screen" title="no title" charset="utf-8">
     <meta charset="utf-8">
     <title>index</title>
   </head>
   <body>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-6 col-md-offset-8">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <ul class="nav nav-pills">
+                <li role="presentation"><a class="navbar-brand" href="#">
+                  <img alt="Brand"></a>
+                </li>
+                <li role="presentation"><a href="#">Funds: {{ funds }}</a></li>
+                <li role="presentation"><a href="#">Comments </a></li>
+                <!--dropdwon navbar  -->
+                <li role="presentation" class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    Items <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    ...
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="row">
+        <div class="text-center col-md-10 col-md-offset-1">
+          <p class="well" id="itemhub">ITEMHUB</p>
           <table>
-            <th>
-              Account
-              <button class="btn" type="button" name="button">x</button>
-            </th>
-            <tr>
-              <td> Login</td>
-              <td>  Username</td>
-              <td>  Password</td>
-            </tr>
+
           </table>
         </div>
       </div>
