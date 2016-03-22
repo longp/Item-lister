@@ -6,7 +6,7 @@ var itemSchema = new Schema ({
   price: Number,
   comment:[{
     type: String, ref: "User"
-  }] String.
+  }],
   Owner: [{
     type:Schema.Types.ObjectId, ref: "User"
   }]
