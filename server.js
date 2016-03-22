@@ -5,6 +5,7 @@ var  app = express();
 var logger = require("morgan")
 
 app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/views"));
 app.use(bodyParser.json());
 
 // mongoose coonnection
@@ -15,10 +16,10 @@ var User = require("./models/User.js");
 var Item = require("./models/Item.js");
 
 app.get("/", function (req, res) {
-  res.sendFile(process.cwd() + "/views/index.html")
+  res.send(index.html)
 });
 
-app.get("/login" , function (req, res) {
+app.post("/login" , function (req, res) {
   User.findOne({
     username : req.body.username
   })
@@ -38,7 +39,7 @@ app.get("/login" , function (req, res) {
           }
         });
       } else {
-        res.send(user)
+        res.send(user);
       }
     }
   });

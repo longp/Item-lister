@@ -10,14 +10,14 @@
   <body>
     <div class="container-fluid">
       <div class="row">
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default" ng-controller="userController as User">
           <div class="container-fluid">
             <div class="navbar-header">
               <ul class="nav nav-pills">
                 <li role="presentation"><a class="navbar-brand" href="#">
                   <img alt="Brand"></a>
                 </li>
-                <li role="presentation"><a href="#">Funds: {{ funds }}</a></li>
+                <li role="presentation"><a href="#">Funds: {{ User.funds }}</a></li>
                 <li role="presentation"><a href="#">Comments </a></li>
                 <!--dropdwon navbar  -->
                 <li role="presentation" class="dropdown">
@@ -30,8 +30,23 @@
                 </li>
               </ul>
             </div>
-            <ul class="navbar-right nav navbar">
-              <li role="presentiation"><a href="#"> Login</a></li>
+            <ul class="navbar-right nav navbar" >
+              <li role="presentiation">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Login</button>
+                <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                  <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                      <form class="" action="index.html" method="post" ng-submit="User.login()">
+                        <span>Username</span><br>
+                        <input type='text' placeholder="username" ng-model="User.username"><br>
+                        <span>Password</span><br>
+                        <input type="password" placeholder="username" ng-model="User.password"><br>
+                        <input type="submit" class="btn btn-block" value="login">
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </li>
             </ul>
           </div>
         </nav>
