@@ -1,7 +1,9 @@
 angular.module("item_lister", []).controller("userController", function ($http) {
   var User = this;
+
   User.items = [];
     User.login = function () {
+      User.loggedin = true;
       $http({
         method: 'POST',
         url: "/login",
@@ -13,7 +15,9 @@ angular.module("item_lister", []).controller("userController", function ($http) 
       }).then(function (result) {
         User.id = result._id;
         User.username = result.username;
+        console.log(User);
+        console.log(result.username);
       });
     };
-    
+
 });

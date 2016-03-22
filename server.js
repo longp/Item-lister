@@ -4,10 +4,11 @@ var mongoose = require("mongoose");
 var  app = express();
 var logger = require("morgan")
 
+
 app.use(express.static(__dirname + "/public"));
 app.use(express.static(__dirname + "/views"));
 app.use(bodyParser.json());
-
+app.use(logger('dev'))
 // mongoose coonnection
 var db = 'mongodb://localhost/itemLister';
 mongoose.connect(db);

@@ -11,12 +11,10 @@
     <div class="container-fluid">
       <div class="row">
         <nav class="navbar navbar-default" ng-controller="userController as User">
+
           <div class="container-fluid">
             <div class="navbar-header">
               <ul class="nav nav-pills">
-                <li role="presentation"><a class="navbar-brand" href="#">
-                  <img alt="Brand"></a>
-                </li>
                 <li role="presentation"><a href="#">Funds: {{ User.funds }}</a></li>
                 <li role="presentation"><a href="#">Comments </a></li>
                 <!--dropdwon navbar  -->
@@ -30,24 +28,24 @@
                 </li>
               </ul>
             </div>
-            <ul class="navbar-right nav navbar" >
-              <li role="presentiation">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Login</button>
-                <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-                  <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                      <form class="" action="index.html" method="post" ng-submit="User.login()">
-                        <span>Username</span><br>
-                        <input type='text' placeholder="username" ng-model="User.username"><br>
-                        <span>Password</span><br>
-                        <input type="password" placeholder="username" ng-model="User.password"><br>
-                        <input type="submit" class="btn btn-block" value="login">
-                      </form>
+            <form class="form-group"  ng-submit="User.login()">
+              <ul class="navbar-right nav navbar" >
+                <li role="presentiation" ng-hide="User.loggedin">
+                    <span>Username</span>
+                    <input type='text' placeholder="username" ng-model="User.username">
+                    <span>Password</span>
+                    <input type="password" placeholder="password" ng-model="User.password">
+                    <input type="submit" class="btn" value="login">
+                      </div>
                     </div>
                   </div>
-                </div>
-              </li>
-            </ul>
+                </li>
+                <li role="presentation" ng-show="User.loggedin">
+                  asdas
+                  {{User.username}}
+                </li>
+              </ul>
+            </form>
           </div>
         </nav>
       </div>
